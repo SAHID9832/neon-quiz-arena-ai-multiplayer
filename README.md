@@ -1,50 +1,58 @@
-# Neon Quiz Arena — AI Multiplayer Showdown
+# 🎮 Neon Quiz Arena: AI Multiplayer Showdown
 
-A browser-based 2–8 player quiz game inspired by modern live quiz-show lobby experiences. It uses original branding and UI while providing a familiar flow: create a game, share a room code, join, answer timed multiple-choice questions, and compete on a live leaderboard.
+Neon Quiz Arena is a real-time multiplayer quiz game where players compete with friends in fast-paced trivia battles.
 
-## Features
-- 2–8 real-time players with Socket.IO
-- 6-character room codes
-- Host-controlled game start
-- AI-generated 10-question quizzes by topic using the OpenAI Responses API
-- Safe fallback question banks when no API key is configured
-- 15-second question timer
-- Speed + correctness + streak scoring
-- Live leaderboard
-- Explanations after answers
-- Final ranking and replay-to-lobby flow
-- Responsive UI inspired by the supplied reference screenshot, but with original branding/assets
+Players can create a game, share a unique game code, join from another device, answer timed questions, earn points, and compete for the highest score.
 
-## Run locally
+## ✨ Features
 
-1. Install Node.js 18+.
-2. Open this folder in VS Code.
-3. Run:
+- 👥 Real-time multiplayer gameplay
+- 🔑 Create and join games using a unique game code
+- ⏱️ Timed quiz questions
+- 🏆 Live scoring and leaderboard
+- 🔥 Streak-based scoring
+- ✅ Instant answer feedback
+- 📊 Final results and rankings
+- 📱 Responsive web interface
+- 🔄 Play-again functionality
+- 🎯 Multiple quiz topics
+- 🎨 Modern interactive quiz interface
 
-```powershell
-npm install
-npm start
-```
+## 🕹️ How to Play
 
-4. Open `http://localhost:3000`.
-5. Open a second browser/incognito window and join the same room to test multiplayer.
+1. Open the game.
+2. Enter your player name.
+3. Create a new game or join an existing game.
+4. Share the game code with your friends.
+5. The host starts the game.
+6. Answer each question before the timer expires.
+7. Earn points for correct answers.
+8. Compete for the highest score.
+9. View the final leaderboard.
 
-## Enable AI question generation
+## 🛠️ Technologies
 
-Copy `.env.example` to `.env` and set:
+- HTML5
+- CSS3
+- JavaScript
+- Node.js
+- Express.js
+- Socket.IO
+- WebSockets
 
-```env
-OPENAI_API_KEY=your_key
-OPENAI_MODEL=gpt-6-luna
-```
+## 📁 Project Structure
 
-Never commit `.env` to GitHub. The server calls the OpenAI Responses API; the browser never receives the API key.
-
-## Deployment
-
-Render can use:
-- Build: `npm install`
-- Start: `npm start`
-- Environment: `OPENAI_API_KEY`, `OPENAI_MODEL`
-
-The included `render.yaml` can be used as a starting point.
+```text
+neon-quiz-arena/
+│
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+│
+├── server.js
+├── package.json
+├── package-lock.json
+├── render.yaml
+├── .gitignore
+└── README.md

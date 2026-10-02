@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neon Quiz Arena — AI Multiplayer</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar"><div class="brand"><div class="brandmark">Q</div><div><strong>NEON QUIZ ARENA</strong><span>AI MULTIPLAYER SHOWDOWN</span></div></div><div class="navcats"><span>✦ Start</span><span>🎨 Creative</span><span>⚡ Tech</span><span>🌍 World</span><span>🔬 Science</span><span>🏆 Sports</span></div><button id="signin" class="smallBtn">Sign in</button></div>
+<main>
+<section id="home" class="screen">
+  <div class="heroGrid">
+    <div class="heroCard"><div class="miniLabel">MULTIPLAYER QUIZ GAME</div><h1>Think fast.<br><em>Win together.</em></h1><p>Create a live quiz room, invite your friends, and race the clock. Every answer earns points based on correctness, speed, and streaks.</p><div class="actions"><input id="name" maxlength="18" placeholder="Enter your name" value="Player"><select id="topic"><option>General</option><option>Technology</option><option>Science</option></select><button id="create">Create Quiz</button></div><div class="joinRow"><input id="code" maxlength="6" placeholder="ENTER GAME CODE"><button id="join" class="secondary">Join Game</button></div><div id="msg" class="msg"></div></div>
+    <div class="featureCard"><div class="aiArt"><div class="orbit"></div><div class="spark">✦</div><div class="aiFace">AI</div></div><h2>AI Quiz Generator</h2><p>Pick a topic and the AI Game Master creates a fresh 10-question challenge for your room.</p><div class="featurePills"><span>10 Questions</span><span>15 Sec / Q</span><span>2–8 Players</span></div></div>
+  </div>
+  <div class="sectionTitle"><div><span>HOW IT WORKS</span><h2>From room code to leaderboard</h2></div><div class="steps"><div><b>01</b><strong>Create</strong><small>Choose a topic</small></div><div><b>02</b><strong>Join</strong><small>Share your code</small></div><div><b>03</b><strong>Play</strong><small>Answer fast</small></div><div><b>04</b><strong>Win</strong><small>Top the board</small></div></div></div>
+</section>
+<section id="lobby" class="screen hidden"><div class="panel"><div class="roomTop"><div><div class="miniLabel">GAME CODE</div><div id="roomCode" class="roomCode">------</div><p>Share this code with your friends. The host starts when everyone is ready.</p></div><button id="copy" class="secondary">Copy Code</button></div><div class="lobbyMeta"><span id="lobbyTopic">General</span><span>10 Questions</span><span>15 Seconds</span><span>2–8 Players</span></div><div id="players" class="players"></div><button id="start" class="startBtn">Need 2 Players</button></div></section>
+<section id="loading" class="screen hidden"><div class="loadingCard"><div class="spinner"></div><div class="miniLabel">AI GAME MASTER</div><h1>Building your quiz…</h1><p>Creating questions, choices, explanations, and a balanced challenge.</p></div></section>
+<section id="quiz" class="screen hidden"><div class="quizHead"><div><div class="miniLabel" id="quizTopic">GENERAL</div><h2 id="qNumber">Question 1 of 10</h2></div><div class="timerCircle" id="timer">15</div><div class="myScore" id="score">0 pts</div></div><div class="progress"><div id="progressBar"></div></div><div class="quizLayout"><div class="questionCard"><div class="questionText" id="question"></div><div id="answers" class="answers"></div><div id="feedback" class="feedback hidden"></div></div><aside class="leaderCard"><div class="asideTitle">LIVE SCORES</div><div id="leaderboard"></div><div class="aiBadge">✦ AI GAME MASTER <span id="aiState">READY</span></div></aside></div></section>
+<section id="result" class="screen hidden"><div class="resultCard"><div class="miniLabel">GAME COMPLETE</div><h1 id="winner">Winner</h1><p id="winnerScore"></p><div id="finalScores" class="final"></div><button id="again" class="startBtn">Back to Lobby</button></div></section>
+</main>
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body></html>
